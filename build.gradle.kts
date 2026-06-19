@@ -6,7 +6,8 @@ plugins {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
-    implementation("com.github.LapisDevelop:Database:master-SNAPSHOT")
+    implementation("com.github.LapisDevelop:Database:v0.1.2")
+    implementation(files("../LapisTasks/build/libs/LapisTasks-0.0.1.jar"))
 }
 
 java {

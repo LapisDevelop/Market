@@ -1,6 +1,7 @@
 package com.lapisdev.market;
 
 import com.lapisdev.database.DatabaseTable;
+import com.lapisdev.database.QueryArray;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
@@ -34,5 +35,13 @@ public class LapisMarketItem implements DatabaseTable<LapisMarketItem> {
         this.signY = signLocation.getBlockY();
         this.signZ = signLocation.getBlockZ();
         this.stock = 0;
+    }
+
+    public LapisMarketItem fromSignLocation(Location signLocation) {
+        return QueryArray.single(select("signX = ? AND signY = ? AND signZ = ?", signLocation.getBlockX(), signLocation.getBlockY(), signLocation.getBlockZ()));
+    }
+
+    public LapisMarketItem fromChestLocation(Location chestLocation) {
+        return QueryArray.single(select("chestX = ? AND chestY = ? AND chestZ = ?", chestLocation.getBlockX(), chestLocation.getBlockY(), chestLocation.getBlockZ()));
     }
 }
