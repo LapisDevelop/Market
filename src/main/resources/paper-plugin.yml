@@ -1,0 +1,11 @@
+name: LapisMarket
+description: '${description}'
+prefix: LapisMarket
+version: '${version}'
+
+main: com.lapisdev.market.LapisMarket
+api-version: '26.1.2'
+load: POSTWORLD
+
+authors: [ Lapis Development <info@lapisdev.com> ]
+website: https://lapisdev.com
